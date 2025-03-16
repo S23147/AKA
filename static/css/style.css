@@ -1,0 +1,58 @@
+/* Centrer le formulaire et réduire la largeur des champs */
+form {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Fond semi-transparent */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style des champs */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Boutons */
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+button.read-nfc {
+    background-color: #28a745;
+    color: white;
+}
+
+button.read-nfc:hover {
+    background-color: #218838;
+}
+
+/* Alignement et mise en page de l'UID */
+#uid {
+    font-size: 14px;
+    color: #444;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}

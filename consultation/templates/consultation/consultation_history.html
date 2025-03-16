@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center">Historique des consultations de {{ patient.first_name }} {{ patient.last_name }}</h2>
+        
+        <div class="text-center mb-3">
+            <a href="{% url 'add_consultation' patient.id %}" class="btn btn-success">➁ENouvelle consultation</a>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Médecin</th>
+                    <th>Type</th>
+                    <th>Notes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for consultation in consultations %}
+                <tr>
+                    <td>{{ consultation.date|date:"d/m/Y H:i" }}</td>
+                    <td>
+                        {% if consultation.doctor %}
+                            {{ consultation.doctor.first_name }} {{ consultation.doctor.last_name }}
+                        {% else %}
+                            <span class="text-muted">Non attribué</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ consultation.type_consultation }}</td>
+                    <td>{{ consultation.notes_consultation|default:"Aucune note" }}</td>
+                    <td>
+                        <a href="{% url 'edit_consultation' consultation.id %}" class="btn btn-warning btn-sm">✁EModifier</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="text-center text-muted">Aucune consultation trouvée.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 15px;
+        background-color: #f8f9fa;
+    }
+</style>
+{% endblock %}

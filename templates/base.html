@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue sur le Site de Patients Smart Health Card System</title>
+
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+<body>
+
+    <!-- Bande déroulante -->
+    <div class="scrolling-text">
+        <span>Bienvenue sur le Site de Patients Smart Health Card System</span>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, #F77F00, #ffffff, #009E60);">
+        <a class="navbar-brand" href="{% url 'patients:dashboard' %}">
+            <img src="{% static 'images/logo_sante_ci.png' %}" alt="Logo Santé CI" width="50">
+            Smart Health Card System
+        </a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="{% url 'patients:dashboard' %}"><i class="fas fa-home"></i> Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'patients:patient_list' %}"><i class="fas fa-user-injured"></i> Patients</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'hopital:hopital_list' %}"><i class="fas fa-hospital"></i> Hôpitaux</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pharmacie:pharmacie_dashboard' %}"><i class="fas fa-pills"></i> Pharmacie</a></li>
+            <li class="nav-item">
+                <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger" style="position: absolute; right: 10px;">
+                        <i class="fas fa-sign-out-alt"></i> Déconnexion
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Logo DISD -->
+    <img src="{% static 'images/Logo-DISD.png' %}" class="disd-logo" alt="DISD" style="position: absolute; top: 10px; left: 10px; width: 120px;">
+
+    <div class="container mt-5">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer class="text-center mt-5" style="background-color: #2c2c2c; color: white;">
+        <p>&copy; 2025 Smart Health Card - Tous droits réservés.</p>
+        <p>Développé par **AKA - 赤 佳**</p>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}" defer></script>
+</body>
+</html>

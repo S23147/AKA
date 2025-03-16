@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mt-4 text-center">🏥 Ajouter un Hôpital</h2>
+
+    {% if messages %}
+        <div class="alert alert-success">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Nom de l'Hôpital</label>
+            {{ form.nom_hopital }}
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Catégorie</label>
+            {{ form.categorie }}
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Adresse</label>
+            {{ form.adresse_hopital }}
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Téléphone</label>
+            {{ form.telephone }}
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Capacité</label>
+            {{ form.capacity }} <!-- Ajout de la capacité si nécessaire -->
+        </div>
+        <button type="submit" class="btn btn-success">Enregistrer</button>
+        <a href="{% url 'hopital:hopital_list' %}" class="btn btn-secondary">Retour</a>
+    </form>
+</div>
+{% endblock %}

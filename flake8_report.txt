@@ -1,0 +1,34 @@
+.\MonProjetDjango\settings.py:23:80: E501 line too long (81 > 79 characters)
+.\MonProjetDjango\settings.py:94:80: E501 line too long (91 > 79 characters)
+.\MonProjetDjango\settings.py:97:80: E501 line too long (81 > 79 characters)
+.\MonProjetDjango\settings.py:100:80: E501 line too long (82 > 79 characters)
+.\MonProjetDjango\settings.py:103:80: E501 line too long (83 > 79 characters)
+.\MonProjetDjango\urls.py:3:80: E501 line too long (93 > 79 characters)
+.\MonProjetDjango\urls.py:7:80: E501 line too long (83 > 79 characters)
+.\MonProjetDjango\urls.py:8:80: E501 line too long (94 > 79 characters)
+.\MonProjetDjango\urls.py:9:80: E501 line too long (100 > 79 characters)
+.\analyze_code.py:17:1: E302 expected 2 blank lines, found 1
+.\analyze_code.py:18:80: E501 line too long (85 > 79 characters)
+.\analyze_code.py:22:1: W293 blank line contains whitespace
+.\analyze_code.py:23:80: E501 line too long (134 > 79 characters)
+.\analyze_code.py:38:1: E305 expected 2 blank lines after class or function definition, found 1
+.\healthcard\nfc_reader.py:21:1: W293 blank line contains whitespace
+.\healthcard\views.py:5:1: E302 expected 2 blank lines, found 1
+.\healthcard\views.py:9:80: E501 line too long (89 > 79 characters)
+.\healthcard\views.py:21:80: E501 line too long (107 > 79 characters)
+.\healthcard\views.py:24:80: E501 line too long (94 > 79 characters)
+.\patients\forms.py:4:1: E302 expected 2 blank lines, found 1
+.\patients\migrations\0001_initial.py:17:80: E501 line too long (117 > 79 characters)
+.\patients\migrations\0002_patient_poids_patient_taille_patient_telephone.py:16:80: E501 line too long (83 > 79 characters)
+.\patients\migrations\0002_patient_poids_patient_taille_patient_telephone.py:21:80: E501 line too long (83 > 79 characters)
+.\patients\models.py:3:1: E302 expected 2 blank lines, found 1
+.\patients\models.py:7:80: E501 line too long (99 > 79 characters)
+.\patients\models.py:8:80: E501 line too long (99 > 79 characters)
+.\patients\models.py:9:80: E501 line too long (99 > 79 characters)
+.\patients\views.py:8:1: E302 expected 2 blank lines, found 1
+.\patients\views.py:18:80: E501 line too long (92 > 79 characters)
+.\patients\views.py:20:1: E302 expected 2 blank lines, found 1
+.\patients\views.py:22:80: E501 line too long (80 > 79 characters)
+.\patients\views.py:24:1: E302 expected 2 blank lines, found 1
+.\patients\views.py:36:1: E302 expected 2 blank lines, found 1
+.\patients\views.py:41:1: E302 expected 2 blank lines, found 1

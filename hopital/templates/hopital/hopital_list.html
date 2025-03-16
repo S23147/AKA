@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mt-4">Liste des Hôpitaux</h2>
+    <a href="{% url 'hopital:add_hopital' %}" class="btn btn-primary my-3">Ajouter un Hôpital</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Téléphone</th>
+                <th>Email</th>
+                <th>Capacité</th> <!-- Cette ligne doit correspondre au modèle -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for hopital in hopitaux %}
+            <tr>
+                <td>{{ hopital.nom_hopital }}</td>
+                <td>{{ hopital.adresse_hopital }}</td>
+                <td>{{ hopital.telephone }}</td>
+                <td>{{ hopital.email }}</td>
+                <td>{{ hopital.capacity }}</td> <!-- Cette ligne doit être valide dans le modèle -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

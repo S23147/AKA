@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mt-4">Ajouter un Médicament</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_nom">Nom du médicament</label>
+            {{ form.nom }}
+        </div>
+        <div class="form-group">
+            <label for="id_quantite">Quantité</label>
+            {{ form.quantite }}
+        </div>
+        <div class="form-group">
+            <label for="id_date_expiration">Date d'expiration</label>
+            {{ form.date_expiration }}
+        </div>
+        <button type="submit" class="btn btn-success">Ajouter</button>
+    </form>
+</div>
+{% endblock %}

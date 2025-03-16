@@ -1,0 +1,20 @@
+<!-- ministere/dashboard.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Ministère de la Santé</title>
+</head>
+<body>
+    <h1>Dashboard Ministère de la Santé</h1>
+    <h2>Statistiques de Santé</h2>
+    <p>Total des patients : {{ health_statistics.total_patients }}</p>
+    <p>Total des consultations : {{ health_statistics.total_consultations }}</p>
+    <p>Total des analyses : {{ health_statistics.total_laboratory_tests }}</p>
+
+    <h2>Gestion des Stocks</h2>
+    <p>Total des médicaments : {{ stock_data.total_medicines }}</p>
+    <p>Médicaments en stock : {{ stock_data.medicines_in_stock }}</p>
+</body>
+</html>

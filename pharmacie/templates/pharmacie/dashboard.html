@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container text-center">
+    <h2 class="mt-4">Tableau de Bord - Pharmacie</h2>
+    <p class="text-muted">Gérez les médicaments et leurs stocks.</p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Ajouter un Médicament</h5>
+                    <p class="card-text">Ajoutez de nouveaux médicaments à la base.</p>
+                    <a href="{% url 'add_medicament' %}" class="btn btn-primary">Ajouter</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Liste des Médicaments</h5>
+                    <p class="card-text">Consultez et gérez les stocks existants.</p>
+                    <a href="{% url 'medicament_list' %}" class="btn btn-success">Voir la Liste</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

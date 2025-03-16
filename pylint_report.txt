@@ -1,0 +1,8 @@
+************* Module MonProjetDjango
+MonProjetDjango\__init__.py:1:0: C0103: Module name "MonProjetDjango" doesn't conform to snake_case naming style (invalid-name)
+************* Module MonProjetDjango.urls
+MonProjetDjango\urls.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+
+-----------------------------------
+Your code has been rated at 9.38/10
+

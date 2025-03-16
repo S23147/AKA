@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    /* Supprimer la barre blanche */
+    body {
+        background: url("{% static 'images/Tableau_de_bord.png' %}") no-repeat center center fixed;
+        background-size: 90%; /* Ajusté pour bien afficher la carte */
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+</style>
+{% endblock %}

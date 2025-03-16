@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Bienvenue Dr {{ user.username }}</h2>
+<p>Accédez aux dossiers des patients et gérez les consultations.</p>
+<a href="/consultation/list/" class="btn btn-primary">Voir consultations</a>
+<a href="/patients/list/" class="btn btn-secondary">Liste des patients</a>
+{% endblock %}

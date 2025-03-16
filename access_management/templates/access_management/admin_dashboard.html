@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container text-center">
+    <h2 class="mt-4">Tableau de Bord - Accès Utilisateurs</h2>
+    <p class="text-muted">Sélectionnez votre accès</p>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <img src="{% static 'images/superadmin.png' %}" width="80">
+                    <h5 class="card-title">Super Admin</h5>
+                    <a href="{% url 'superadmin_dashboard' %}" class="btn btn-primary">Accéder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <img src="{% static 'images/admin.png' %}" width="80">
+                    <h5 class="card-title">Admin</h5>
+                    <a href="{% url 'admin_dashboard' %}" class="btn btn-success">Accéder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <img src="{% static 'images/medecin.png' %}" width="80">
+                    <h5 class="card-title">Médecin</h5>
+                    <a href="{% url 'medecin_dashboard' %}" class="btn btn-info">Accéder</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <img src="{% static 'images/patient.png' %}" width="80">
+                    <h5 class="card-title">Patient</h5>
+                    <a href="{% url 'patient_dashboard' %}" class="btn btn-danger">Accéder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <img src="{% static 'images/pharmacien.png' %}" width="80">
+                    <h5 class="card-title">Pharmacien</h5>
+                    <a href="{% url 'pharmacien_dashboard' %}" class="btn btn-warning">Accéder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <img src="{% static 'images/ministere.png' %}" width="80">
+                    <h5 class="card-title">Ministère</h5>
+                    <a href="{% url 'ministere_dashboard' %}" class="btn btn-dark">Accéder</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <img src="{% static 'images/personnel_admin.png' %}" width="80">
+                    <h5 class="card-title">Personnel Administratif</h5>
+                    <a href="{% url 'personnel_admin_dashboard' %}" class="btn btn-secondary">Accéder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <img src="{% static 'images/bureau_entree.png' %}" width="80">
+                    <h5 class="card-title">Bureau d'Entrée</h5>
+                    <a href="{% url 'bureau_entree_dashboard' %}" class="btn btn-light">Accéder</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <img src="{% static 'images/services.png' %}" width="80">
+                    <h5 class="card-title">Services</h5>
+                    <a href="{% url 'services_dashboard' %}" class="btn btn-success">Accéder</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

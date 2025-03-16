@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture de la Carte NFC</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <style>
+        .container {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>📡 Placez la carte sur le lecteur NFC</h2>
+        <button id="read-card-btn" class="btn btn-success mt-3">Lire la carte</button>
+        <p id="loading" class="mt-3 text-warning" style="display:none;">Lecture en cours...</p>
+        <p id="card-uid" class="mt-4 text-info"></p>
+        <div id="patient-info" class="mt-3"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#read-card-btn').on('click', function() {
+                $('#loading').show();
+                $('#card-uid').html('');
+                $('#patient-info').html('');
+
+                $.get("{% url 'read_nfc_card' %}", function(data) {
+                    $('#loading').hide();
+                    if (data.status === 'success') {
+                        $('#card-uid').html(`<div class="alert alert-success"><strong>UID de la carte :</strong> ${data.uid}</div>`);
+                        $('#patient-info').html(`
+                            <div class="alert alert-info">
+                                <strong>Patient :</strong> ${data.patient.prenom} ${data.patient.nom} <br>
+                                <strong>Date de naissance :</strong> ${data.patient.date_naissance} <br>
+                                <strong>Téléphone :</strong> ${data.patient.telephone} <br>
+                                <strong>Email :</strong> ${data.patient.email}
+                            </div>
+                        `);
+                    } else {
+                        $('#card-uid').html(`<div class="alert alert-danger"><strong>Erreur :</strong> ${data.message}</div>`);
+                    }
+                }).fail(function() {
+                    $('#loading').hide();
+                    $('#card-uid').html('<div class="alert alert-danger">Erreur : Impossible de contacter le serveur.</div>');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
